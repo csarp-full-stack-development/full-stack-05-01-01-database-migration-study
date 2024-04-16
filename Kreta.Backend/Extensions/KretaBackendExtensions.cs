@@ -37,21 +37,43 @@ namespace Kreta.Backend.Extensions
 
         public static void ConfigureRepoService(this IServiceCollection services)
         {
-            services.AddScoped<ITeacherRepo, TeacherRepo<KretaInMemoryContext>>();
-            services.AddScoped<IGradeRepo, GradeRepo<KretaInMemoryContext>>();
-            services.AddScoped<IParentRepo, ParentRepo<KretaInMemoryContext>>();
-            services.AddScoped<IStudentRepo, StudentRepo<KretaInMemoryContext>>();
-            services.AddScoped<ISubjectRepo, SubjectRepo<KretaInMemoryContext>>();
-            services.AddScoped<IEducationLevelRepo, EducationLevelRepo<KretaInMemoryContext>>();
-            services.AddScoped<ISchoolClassRepo, SchoolClassRepo<KretaInMemoryContext>>();
-            services.AddScoped<IAddressRepo, AddressRepo<KretaInMemoryContext>>();
-            services.AddScoped<IPublicSpaceRepo, PublicSpaceRepo<KretaInMemoryContext>>();
-            services.AddScoped<ITypeOfEducationRepo, TypeOfEducationRepo<KretaInMemoryContext>>();
-            services.AddScoped<ISubjectTypeRepo, SubjectTypeRepo<KretaInMemoryContext>>();
+            bool test = false;
+            if (test)
+            {
+                services.AddScoped<ITeacherRepo, TeacherRepo<KretaInMemoryContext>>();
+                services.AddScoped<IGradeRepo, GradeRepo<KretaInMemoryContext>>();
+                services.AddScoped<IParentRepo, ParentRepo<KretaInMemoryContext>>();
+                services.AddScoped<IStudentRepo, StudentRepo<KretaInMemoryContext>>();
+                services.AddScoped<ISubjectRepo, SubjectRepo<KretaInMemoryContext>>();
+                services.AddScoped<IEducationLevelRepo, EducationLevelRepo<KretaInMemoryContext>>();
+                services.AddScoped<ISchoolClassRepo, SchoolClassRepo<KretaInMemoryContext>>();
+                services.AddScoped<IAddressRepo, AddressRepo<KretaInMemoryContext>>();
+                services.AddScoped<IPublicSpaceRepo, PublicSpaceRepo<KretaInMemoryContext>>();
+                services.AddScoped<ITypeOfEducationRepo, TypeOfEducationRepo<KretaInMemoryContext>>();
+                services.AddScoped<ISubjectTypeRepo, SubjectTypeRepo<KretaInMemoryContext>>();
 
-            services.AddScoped<ISchoolClassStudentsRepo,SchoolClassStudentsRepo<KretaInMemoryContext>>();
-            services.AddScoped<ISchoolClassSubjectsRepo, SchoolClassSubjectsRepo<KretaInMemoryContext>>();
-            services.AddScoped<ITeacherTeachInSchoolClass,TeacherTeachInSchoolClassRepo<KretaInMemoryContext>>();            
+                services.AddScoped<ISchoolClassStudentsRepo, SchoolClassStudentsRepo<KretaInMemoryContext>>();
+                services.AddScoped<ISchoolClassSubjectsRepo, SchoolClassSubjectsRepo<KretaInMemoryContext>>();
+                services.AddScoped<ITeacherTeachInSchoolClass, TeacherTeachInSchoolClassRepo<KretaInMemoryContext>>();
+            }
+            else
+            {
+                services.AddScoped<ITeacherRepo, TeacherRepo<KretaMySqlContext>>();
+                services.AddScoped<IGradeRepo, GradeRepo<KretaMySqlContext>>();
+                services.AddScoped<IParentRepo, ParentRepo<KretaMySqlContext>>();
+                services.AddScoped<IStudentRepo, StudentRepo<KretaMySqlContext>>();
+                services.AddScoped<ISubjectRepo, SubjectRepo<KretaMySqlContext>>();
+                services.AddScoped<IEducationLevelRepo, EducationLevelRepo<KretaMySqlContext>>();
+                services.AddScoped<ISchoolClassRepo, SchoolClassRepo<KretaMySqlContext>>();
+                services.AddScoped<IAddressRepo, AddressRepo<KretaMySqlContext>>();
+                services.AddScoped<IPublicSpaceRepo, PublicSpaceRepo<KretaMySqlContext>>();
+                services.AddScoped<ITypeOfEducationRepo, TypeOfEducationRepo<KretaMySqlContext>>();
+                services.AddScoped<ISubjectTypeRepo, SubjectTypeRepo<KretaMySqlContext>>();
+
+                services.AddScoped<ISchoolClassStudentsRepo, SchoolClassStudentsRepo<KretaMySqlContext>>();
+                services.AddScoped<ISchoolClassSubjectsRepo, SchoolClassSubjectsRepo<KretaMySqlContext>>();
+                services.AddScoped<ITeacherTeachInSchoolClass, TeacherTeachInSchoolClassRepo<KretaMySqlContext>>();
+            }
 
             services.AddScoped<IRepositoryManager, RepositoryManager>();
         }
