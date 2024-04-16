@@ -31,6 +31,8 @@ namespace Kreta.Backend.Extensions
             services.AddDbContext<KretaInMemoryContext>(
                 options => options.UseInMemoryDatabase(databaseName: dbName)
             );
+            string connectionString = "server=localhost;userid=root;password=;database=kreta;port=3306";
+            services.AddDbContext<KretaMySqlContext>(options => options.UseMySQL(connectionString));
         }
 
         public static void ConfigureRepoService(this IServiceCollection services)
