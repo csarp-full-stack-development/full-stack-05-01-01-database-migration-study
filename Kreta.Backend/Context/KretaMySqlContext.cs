@@ -7,5 +7,10 @@ namespace Kreta.Backend.Context
         public KretaMySqlContext(DbContextOptions<KretaMySqlContext> options) : base(options)
         {
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
+        }
     }
 }
