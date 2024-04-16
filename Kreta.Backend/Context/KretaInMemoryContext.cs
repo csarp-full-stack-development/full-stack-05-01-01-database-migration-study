@@ -4,7 +4,7 @@ namespace Kreta.Backend.Context
 {
     public class KretaInMemoryContext : KretaContext
     {
-        public KretaInMemoryContext(DbContextOptions options) : base(options)
+        public KretaInMemoryContext(DbContextOptions<KretaInMemoryContext> options) : base(options)
         {
         }
 

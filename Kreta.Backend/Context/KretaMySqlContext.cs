@@ -4,7 +4,7 @@ namespace Kreta.Backend.Context
 {
     public class KretaMySqlContext : KretaContext
     {
-        public KretaMySqlContext(DbContextOptions options) : base(options)
+        public KretaMySqlContext(DbContextOptions<KretaMySqlContext> options) : base(options)
         {
         }
     }
