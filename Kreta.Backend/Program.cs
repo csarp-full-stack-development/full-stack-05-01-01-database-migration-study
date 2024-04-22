@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen();
 // Cors
 builder.Services.ConfigureCors();
 // InMemory context kofigurálása
-builder.Services.ConfigureInMemoryContext();
+builder.Services.ConfigureKretaContext();
 // Repo konfigurálás
 builder.Services.ConfigureRepoService();
 // Assamblerek konfigurálása

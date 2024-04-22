@@ -25,7 +25,7 @@ namespace Kreta.Backend.Extensions
             );
         }
 
-        public static void ConfigureInMemoryContext(this IServiceCollection services)
+        public static void ConfigureKretaContext(this IServiceCollection services)
         {
             string dbName = "Kreta" + Guid.NewGuid();
             services.AddDbContext<KretaInMemoryContext>(
